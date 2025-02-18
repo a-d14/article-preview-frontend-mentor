@@ -1,0 +1,3 @@
+@use './functions' as f;
+
+$spacing-values: ("0": f.rem(0), "200": f.rem(16), "300": f.rem(24), "400": f.rem(32), "500": f.rem(40), "600": f.rem(48), "700": f.rem(56), "800": f.rem(64), "1300": f.rem(10)4, "2000": f.rem(160));

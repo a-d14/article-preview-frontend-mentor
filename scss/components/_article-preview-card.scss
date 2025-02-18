@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "../abstracts" as a;
+
+.article-preview-card {
+    width: 100%;
+    max-width: a.rem(730);
+    @include a.set-flex(column);
+    overflow: hidden;
+    border-radius: a.rem(10);
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__body {
+        padding: map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "200") map.get(a.$spacing-values, "400");
+        @include a.set-flex(column, $gap: map.get(a.$spacing-values, "300"));
+    }
+}
