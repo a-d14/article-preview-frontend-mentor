@@ -8,9 +8,15 @@
     overflow: hidden;
     border-radius: a.rem(10);
 
+    &__img-container {
+        align-self: stretch;
+    }
+
     &__image {
-        max-width: 100%;
-        height: auto;
+        width: 100%;
+        height: a.rem(200);
+        object-fit: cover;
+        object-position: left 25%; 
     }
 
     &__body {
