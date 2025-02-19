@@ -4,13 +4,9 @@
 .article-preview-card {
     width: 100%;
     max-width: a.rem(730);
-    @include a.set-flex(column);
+    @include a.set-flex(column, $align-items: stretch);
     overflow: hidden;
     border-radius: a.rem(10);
-
-    &__img-container {
-        align-self: stretch;
-    }
 
     &__image {
         width: 100%;
@@ -19,8 +15,42 @@
         object-position: left 25%; 
     }
 
-    &__body {
-        padding: map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "200") map.get(a.$spacing-values, "400");
+    &__main {
+        padding: map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "300") map.get(a.$spacing-values, "400");
         @include a.set-flex(column, $gap: map.get(a.$spacing-values, "300"));
+    }
+
+    &__footer {
+        padding: map.get(a.$spacing-values, "300") map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "200") map.get(a.$spacing-values, "400");
+        display: grid;
+        gap: map.get(a.$spacing-values, "200");
+        align-items: center;
+        grid-template: a.rem(20) a.rem(20) / a.rem(40) 1fr a.rem(32);
+        grid-template-areas: 
+            "image author-info action"
+            "image author-info action";
+    }
+
+    &__author-profile-picture {
+        border-radius: 50%;
+        grid-area: image;
+    }
+
+    &__metadata {
+        grid-area: author-info;
+        line-height: 1.2;
+
+        > * {
+            display: block;
+        }
+    }
+
+    &__action {
+        @include a.set-flex();
+
+        grid-area: action;
+        width: a.rem(32);
+        height: a.rem(32);
+        border-radius: 50%;
     }
 }
