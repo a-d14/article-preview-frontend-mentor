@@ -9,20 +9,36 @@
     overflow: hidden;
     border-radius: a.rem(10);
 
+    &__header {
+        height: a.rem(200);
+
+        @media all and (min-width: a.rem(768)) {
+            height: inherit;
+        }
+    }
+
     &__image {
         width: 100%;
-        height: a.rem(200);
+        height: 100%;
         object-fit: cover;
         object-position: left 25%; 
     }
+    
+    &__body {
+        padding: map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "200") map.get(a.$spacing-values, "400");
+        @include a.set-flex(column, $align-items: stretch, $gap: map.get(a.$spacing-values, "600"));
+
+        @media all and (min-width: a.rem(768)) {
+            padding: map.get(a.$spacing-values, "500");
+            gap: map.get(a.$spacing-values, "300");
+        }
+    }
 
     &__main {
-        padding: map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "300") map.get(a.$spacing-values, "400");
         @include a.set-flex(column, $gap: map.get(a.$spacing-values, "300"));
     }
 
     &__footer {
-        padding: map.get(a.$spacing-values, "300") map.get(a.$spacing-values, "400") map.get(a.$spacing-values, "200") map.get(a.$spacing-values, "400");
         display: grid;
         gap: map.get(a.$spacing-values, "200");
         align-items: center;
@@ -66,5 +82,9 @@
         svg {
             fill: c.$grey-500;
         }
+    }
+
+    @media all and (min-width: a.rem(768)) {
+        @include a.set-flex(row, $align-items: stretch);
     }
 }
