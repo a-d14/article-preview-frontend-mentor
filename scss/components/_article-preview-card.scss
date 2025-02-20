@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "../abstracts" as a;
+@use "../base/colors" as c;
 
 .article-preview-card {
     width: 100%;
@@ -52,5 +53,18 @@
         width: a.rem(32);
         height: a.rem(32);
         border-radius: 50%;
+
+        &:hover {
+            cursor: pointer;
+            background-color: c.$grey-500;
+
+            svg {
+                fill: c.$white;
+            }
+        }
+
+        svg {
+            fill: c.$grey-500;
+        }
     }
 }
