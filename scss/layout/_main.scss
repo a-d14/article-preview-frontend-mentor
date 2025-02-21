@@ -4,4 +4,8 @@
 main {
     @include a.set-flex(column);
     padding: map.get(a.$spacing-values, "800") map.get(a.$spacing-values, "300");
+
+    @media all and (min-width: a.rem(768)) {
+        padding: 0 a.rem(80);
+    }
 }
