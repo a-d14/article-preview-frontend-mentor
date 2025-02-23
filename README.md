@@ -55,3 +55,6 @@ I learned how to make customized tooltips for elements.
 
 ## Author
 - Frontend Mentor - [@a-d14](https://www.frontendmentor.io/profile/a-d14)
+
+## Acknowledgments
+I would like to thank [Darkstar](https://www.frontendmentor.io/profile/DarkstarXDD/solutions) for helping me debug some issues with animation in this project.
